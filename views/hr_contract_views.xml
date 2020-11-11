@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--EDITED | for adding the agnecy field in the sale order table-->
+        <record id="hr_contract_shifaa_ext" model="ir.ui.view">
+            <field name="name">hr_contract_shifaa_ext</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='information']" position="after">
+                <page name="allowance_lines" string="Allowance Details">
+                        <group>
+                            <field name="fixed_allowance_line" track_visibility='onchange'>
+                                <tree editable="top" delete="0">
+                                    <field name="name"  attrs="{'readonly':[('id','>', 0)]}"/>
+                                    <field name="description"  attrs="{'readonly':[('id','>', 0)]}"/>
+                                    <field name="date"  attrs="{'readonly':[('id','>', 0)]}"/>
+                                    <field name="amount" sum="Total"  attrs="{'readonly':[('id','>', 0)]}"/>
+                                </tree>
+                            </field>
+
+                            <field name="fixed_deduction_line" track_visibility='onchange'>
+                                <tree editable="top" delete="0">
+                                    <field name="name"  attrs="{'readonly':[('id','>', 0)]}"/>
+                                    <field name="description"  attrs="{'readonly':[('id','>', 0)]}"/>
+                                    <field name="date"  attrs="{'readonly':[('id','>', 0)]}"/>
+                                    <field name="amount"  sum="Total" attrs="{'readonly':[('id','>', 0)]}"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+                    
+            </field>
+        </record>
+    </data>
+</odoo>
