@@ -12,20 +12,20 @@
                 <page name="allowance_lines" string="Allowance Details">
                         <group>
                             <field name="fixed_allowance_line" track_visibility='onchange'>
-                                <tree editable="top" delete="0">
-                                    <field name="name"  attrs="{'readonly':[('id','>', 0)]}"/>
-                                    <field name="description"  attrs="{'readonly':[('id','>', 0)]}"/>
-                                    <field name="date"  attrs="{'readonly':[('id','>', 0)]}"/>
-                                    <field name="amount" sum="Total"  attrs="{'readonly':[('id','>', 0)]}"/>
+                                <tree editable="top">
+                                    <field name="name" />
+                                    <field name="description" />
+                                    <field name="date" />
+                                    <field name="amount" sum="Total"/>
                                 </tree>
                             </field>
 
                             <field name="fixed_deduction_line" track_visibility='onchange'>
-                                <tree editable="top" delete="0">
-                                    <field name="name"  attrs="{'readonly':[('id','>', 0)]}"/>
-                                    <field name="description"  attrs="{'readonly':[('id','>', 0)]}"/>
-                                    <field name="date"  attrs="{'readonly':[('id','>', 0)]}"/>
-                                    <field name="amount"  sum="Total" attrs="{'readonly':[('id','>', 0)]}"/>
+                                <tree editable="top">
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                    <field name="date"/>
+                                    <field name="amount"  sum="Total"/>
                                 </tree>
                             </field>
                         </group>
