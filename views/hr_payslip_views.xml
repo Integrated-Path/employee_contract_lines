@@ -6,8 +6,8 @@
             <field name="model">hr.payslip</field>
             <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='sum_worked_hours']" position="attributes">
-                    <attribute name="invisible">0</attribute>
+                <xpath expr="//field[@name='sum_worked_hours']" position="after">
+                    <field name="attendance_hours"/>
                 </xpath>
             </field>
         </record>
