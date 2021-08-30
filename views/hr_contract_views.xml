@@ -15,8 +15,8 @@
                                     <field name="name"/>
                                     <field name="description" />
                                     <field name="date" />
-                                    <field name="is_work_hours" />
-                                    <field name="amount" sum="Total" />
+                                    <field name="special_cases" />
+                                    <field name="amount"/>
                                 </tree>
                             </field>
 
@@ -25,8 +25,8 @@
                                     <field name="name"/>
                                     <field name="description"/>
                                     <field name="date"/>
-                                    <field name="is_work_hours"/>
-                                    <field name="amount" sum="Total"/>
+                                    <field name="special_cases"/>
+                                    <field name="amount"/>
                                 </tree>
                             </field>
                         </group>

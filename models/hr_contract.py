@@ -15,24 +15,26 @@ class FixedAllowance(models.Model):
     _name = "fixed.allowance"
     _rec_name = "name"
 
+    SPECIAL_CASES = [('work_hours', 'Work Hours'), ('percentage', 'Percentage')]
+
 
     hr_contract_id = fields.Many2one('hr.contract', string='Contract')
     name = fields.Char(string="Name")
     description = fields.Char(string="Description")
     date = fields.Date(string="Date")
     amount = fields.Float(string="Amount")
-    is_work_hours = fields.Boolean(string="Work Hours ?")
-
+    special_cases = fields.Selection(SPECIAL_CASES, string="Special Cases")
 
 
 class FiexedDeduction(models.Model):
     _name="fixed.deduction"
     _rec_name="name"
 
+    SPECIAL_CASES = [('work_hours', 'Work Hours'), ('percentage', 'Percentage')]
 
     hr_contract_id = fields.Many2one('hr.contract', string='Contract')
     name = fields.Char(string="Name")
     description = fields.Char(string="Description")
     date = fields.Date(string="Date")
     amount = fields.Float(string="Amount")
-    is_work_hours = fields.Boolean(string="Work Hours ?")
+    special_cases = fields.Selection(SPECIAL_CASES, string="Special Cases")
