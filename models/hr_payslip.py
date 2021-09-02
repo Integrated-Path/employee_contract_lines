@@ -7,13 +7,15 @@ from odoo.exceptions import UserError
 class HrPayslip(models.Model):
     _inherit = "hr.payslip"
 
-    attendance_hours = fields.Float(compute='_compute_attendance_hours', store=True)
+    attendance_id = fields.Many2one('hr.payslip.worked_days', string='Attendance', compute='_compute_attendance_id')
+    attendance_hours = fields.Float(related="attendance_id.number_of_hours", string='Attendance Hours')
 
-    @api.depends('worked_days_line_ids')
-    def _compute_attendance_hours(self):
+    @api.onchange('worked_days_line_ids')
+    def _compute_attendance_id(self):
         for record in self:
             for line in record.worked_days_line_ids:
                 if line.work_entry_type_id.name == "Attendance":
-                    record.attendance_hours = line.number_of_hours
-                else:
-                    record.attendance_hours = 0
+                    record.attendance_id = line.id
+                    break
+            else:
+                record.attendance_id = 0
