@@ -17,4 +17,3 @@ class HrPayslip(models.Model):
                     record.attendance_hours = line.number_of_hours
                 else:
                     record.attendance_hours = 0
-                break
