@@ -2,8 +2,8 @@
 <odoo>
     <data>
         <!--EDITED | for adding the agnecy field in the sale order table-->
-        <record id="hr_contract_shifaa_ext" model="ir.ui.view">
-            <field name="name">hr_contract_shifaa_ext</field>
+        <record id="hr_contract_ext" model="ir.ui.view">
+            <field name="name">hr_contract_ext</field>
             <field name="model">hr.contract</field>
             <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
             <field name="arch" type="xml">
