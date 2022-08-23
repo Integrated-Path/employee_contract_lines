@@ -1,26 +1,18 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Employee Contract Lines",
-
-    'summary': """HR Customizations Employee Contracts""",
-
-    'author': "INTEGRATED PATH",
+    'summary': """ For allowances and deductions per employee regarding strcuture """,
+    'author': "MohammedSaeb@IntegratedPath",
     'website': "https://www.int-path.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/13.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Human Resources',
+    'category': 'Uncategorized',
     'version': '13.1',
-
-    # any module necessary for this one to work correctly
-    'depends': ['base', 'hr', 'hr_contract', 'hr_attendance', 'hr_payroll'],
-
-    # always loaded
+    'depends': ['base', 'hr' 'hr_payroll'],
     'data': [
         'security/ir.model.access.csv',
-        'views/hr_contract_views.xml',
-        'views/hr_payslip_views.xml',
+        'views/views.xml',
+        'views/templates.xml',
     ],
+
+    'license': 'Other proprietary',
 
 }
