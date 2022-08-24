@@ -9,8 +9,8 @@
     'depends': ['base', 'hr', 'hr_payroll'],
     'data': [
         'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/hr_contract_views.xml',
+        'views/hr_payslip_views.xml',
     ],
 
     'license': 'Other proprietary',
