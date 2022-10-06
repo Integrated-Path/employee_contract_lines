@@ -15,26 +15,42 @@ class FixedAllowance(models.Model):
     _name = "fixed.allowance"
     _rec_name = "name"
 
-    SPECIAL_CASES = [('work_hours', 'Work Hours'), ('percentage', 'Percentage')]
+    SPECIAL_CASES = [("work_hours", "Work Hours"), ("percentage", "Percentage")]
 
-
-    hr_contract_id = fields.Many2one('hr.contract', string='Contract')
+    hr_contract_id = fields.Many2one("hr.contract", string="Contract")
     name = fields.Char(string="Name")
     description = fields.Char(string="Description")
-    date = fields.Date(string="Date")
+    date_start = fields.Date(
+        "Start Date",
+        required=True,
+        default=fields.Date.today,
+        tracking=True,
+        help="Fixed Allowance Start date",
+    )
+    date_end = fields.Date("End Date", tracking=True, help="Fixed Allowance End date")
+
     amount = fields.Float(string="Amount")
     special_cases = fields.Selection(SPECIAL_CASES, string="Special Cases")
 
 
+
 class FiexedDeduction(models.Model):
-    _name="fixed.deduction"
-    _rec_name="name"
+    _name = "fixed.deduction"
+    _rec_name = "name"
 
-    SPECIAL_CASES = [('work_hours', 'Work Hours'), ('percentage', 'Percentage')]
+    SPECIAL_CASES = [("work_hours", "Work Hours"), ("percentage", "Percentage")]
 
-    hr_contract_id = fields.Many2one('hr.contract', string='Contract')
+    hr_contract_id = fields.Many2one("hr.contract", string="Contract")
     name = fields.Char(string="Name")
     description = fields.Char(string="Description")
-    date = fields.Date(string="Date")
+    date_start = fields.Date(
+        "Start Date",
+        required=True,
+        default=fields.Date.today,
+        tracking=True,
+        help="Fixed Deduction Start date",
+    )
+    date_end = fields.Date("End Date", tracking=True, help="Fixed Deduction End date")
+
     amount = fields.Float(string="Amount")
     special_cases = fields.Selection(SPECIAL_CASES, string="Special Cases")

@@ -9,27 +9,34 @@
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='information']" position="after">
                     <page name="allowance_lines" string="Allowance Details">
-                        <group>
-                            <field name="fixed_allowance_lines" track_visibility='onchange'>
-                                <tree editable="top">
-                                    <field name="name"/>
-                                    <field name="description" />
-                                    <field name="date" />
-                                    <field name="special_cases" />
-                                    <field name="amount"/>
-                                </tree>
-                            </field>
-
-                            <field name="fixed_deduction_lines" track_visibility='onchange'>
-                                <tree editable="top">
-                                    <field name="name"/>
-                                    <field name="description"/>
-                                    <field name="date"/>
-                                    <field name="special_cases"/>
-                                    <field name="amount"/>
-                                </tree>
-                            </field>
-                        </group>
+                        <notebook>
+                            <page string="Fixed Allowance Lines" name="fixed_allowance_lines">
+                                <field name="fixed_allowance_lines" track_visibility='onchange'>
+                                    <tree editable="top">
+                                        <field name="name"/>
+                                        <field name="description" />
+                                        <field name="date_start" />
+                                        <field name="date_end" />
+                                        <field name="special_cases" />
+                                        <field name="amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page string="Fixed Deduction Lines" name="fixed_deduction_lines">
+                                <field name="fixed_deduction_lines" track_visibility='onchange'>
+                                    <tree editable="top">
+                                        <field name="name"/>
+                                        <field name="description" />
+                                        <field name="date_start" />
+                                        <field name="date_end" />
+                                        <field name="special_cases" />
+                                        <field name="amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </page>
                 </xpath>
             </field>
